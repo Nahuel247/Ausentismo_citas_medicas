@@ -13,21 +13,22 @@ en particular:
 
 * Se utilizó el modelo XGboost, una metodología que se basa en árboles de decisiones.
 
-* Se utilizó una base de datos de citas médicas con 3 meses de información, además cuenta con más de 100 mil registros de citas, información del paciente al momento de solicitar la cita y la marca sobre si asiste o no a la cita médica. Los datos fueron descargados desde la página de Kaggle:
+* Se utilizó una base de datos de citas médicas con 3 meses de información con una tasa de ausentismo del 28%, además cuenta con más de 100 mil registros de citas, información del paciente al momento de solicitar la cita y la marca sobre si asiste o no a la cita médica. Los datos fueron descargados desde la página de Kaggle:
  https://www.kaggle.com/datasets/joniarroba/noshowappointments?select=KaggleV2-May-2016.csv
 
 * Dada la poca información disponible, no se pudieron construir variables históricas o relacionadas con el tipo de especialidad que se quiere asistir. quedando pendiente para otro proyecto.
 
 
-# Ausentismo según periodo
+*Ausentismo según periodo*
 
 A continuación se muestra la tasa de ausentismo para cada uno de los meses con información. Se observa que la tasa de ausentismo es constante para los tres meses.
 
 
 [![Ausentismo-periodo.png](https://i.postimg.cc/zfkRSKFX/Ausentismo-periodo.png)](https://postimg.cc/bGsJqG5K)
 
+
 # Análisis descriptivo de la distribución del ausentismo
-A continuación se muestra los resultados de un análisis descriptivo 
+A continuación se muestra los resultados de un análisis descriptivo de las variables disponibles y su relación con el ausentismo.
 
 *Días de espera*
 
