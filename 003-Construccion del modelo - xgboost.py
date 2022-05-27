@@ -85,7 +85,7 @@ def gini(actual, pred):
 ##########################################
 
 # limpiamos la data
-data_artificial=data.drop(["No-show","AppointmentDay","Neighbourhood","Fecha_cita","Fecha_solicitud","ScheduledDay",
+data_artificial=data.drop(["No-show","Periodo","AppointmentDay","Neighbourhood","Fecha_cita","Fecha_solicitud","ScheduledDay",
                  "Handcap","Gender","semana"],axis=1)
 
 X=data_artificial.drop(["Ausentismo","IDpaciente", "IDcita"],axis=1).copy()

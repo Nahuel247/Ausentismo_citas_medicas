@@ -50,11 +50,11 @@ def bivariante(var_exp, var_resp, n_tramos):
 
     # Graficamos
     matplotlib.rc_file_defaults()
+    sns.set_context('poster', font_scale=0.6)
     fig, ax1 = plt.subplots(figsize=(12, 6))
-
     sns.barplot(x=df_group['categorias'], y=df_group['n'], alpha=0.5, ax=ax1, color="blue")
     ax1.set( xlabel='Fecha de las cita', ylabel="Número de registros (N)")
-
+    sns.set_context('poster', font_scale=0.6)
     ax2 = ax1.twinx()
     sns.lineplot(x=df_group['categorias'], y=df_group['tasa_malo'], marker='o', sort=False, ax=ax2, color="red")
     ax2.set(ylim=(0, 1), ylabel="Tasa de ausentismo")
