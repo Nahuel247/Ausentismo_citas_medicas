@@ -1,0 +1,8 @@
+
+Medical Appointment No Shows
+https://www.kaggle.com/datasets/joniarroba/noshowappointments?select=KaggleV2-May-2016.csv
+
+# Referencias
+https://www.uchile.cl/noticias/179122/cientificos-disenan-modelo-para-predecir-conducta-de-pacientes-
+https://economia3.com/2021/09/16/460009-fin-de-la-sala-de-espera-asi-se-predice-el-absentismo-en-citas-medicas-con-ia/
+https://www.automaticaeinstrumentacion.com/texto-diario/mostrar/3169055/ais-group-utiliza-inteligencia-artificial-predecir-absentismo-citas-medicas
