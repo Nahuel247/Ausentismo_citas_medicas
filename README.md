@@ -68,23 +68,13 @@ Para asegurar la robustez del modelo y su correcta parametrización, se optó po
 
 [![cross-validation.png](https://i.postimg.cc/4yrXpS3y/cross-validation.png)](https://postimg.cc/QKJL3S1Z)
 
-# Accuracy Cross-validation vs Train
-Del proceso anterior, se graficó el desempeño del modelo durante su construcción y durante cross validation, a lo largo de distintos números de árboles (n_estimators). En rojo se encuentra marcado el número de árboles óptimos para lograr el mejor desempeño durante cross-validation. Para el caso, el número de árbol óptimos es 81.
-
-[![acc-cross-validation.png](https://i.postimg.cc/B6wnHHNn/acc-cross-validation.png)](https://postimg.cc/LYLSMqrc)
-
-# Métricas de eficiencia (en test)
-A continuación, se muestran distintos indicadores de la eficiencia del modelo.
-/
-De los indicadores el que más nos interesa para este proyecto es el **recall** que informa sobre la cantidad de ilícito (porcenje) que el modelo de machine learning es capaz de identificar. Para nuestro caso corresponde al **54%**. Por lo cual, si vamos a visitar a todos los registros que el modelo etiqueta como malos, estaríamos visitando al menos al 54% de los registros que comenten ilícito. Hay que tener presente que esta es una medida global y que podría ser mejorada a través de tablas de eficiencia.
-
-[![metricas-eficiencia.png](https://i.postimg.cc/MTDdD0FV/metricas-eficiencia.png)](https://postimg.cc/dkh2QCvV)
 
 # Tablas de eficiencia (en test)
 Para el modelo se obtiene un gini igual a 0.897 indicador de que el modelo tiene una alta capacidad para discretizar entre clientes que cometen ilícitos y los que no.
 A continuación, se muestra la tabla de eficiencia y el número de registros que comenten ilícitos según tramos de probabilidad. Se puede observar que en el último tramo la tasa de registros que comenten ilícitos es del 88%, que equivalen al 56% de los ilícitos totales (22/37), es decir nuestro **“recall”**. 
 
-[![Tabla-eficiencia.png](https://i.postimg.cc/MGbTKtTC/Tabla-eficiencia.png)](https://postimg.cc/FfzmTy0p)
+[Tabla-eficiencia.png](https://postimg.cc/hfh43VKF)
+
 
 # Estrategia de gestión
 Según estos antecedentes si se van a visitar a todos los registros con marca 1 (según el modelo: 23 registros) 21 de ellos serían ilícitos (91%: precision), que corresponde al 54% de los ilícitos totales. Ahora, si se va a visitar a aquellos registros que tienen la probabilidad más alta de ilícito (último tramo: 25 registros) 22 de ello serían ilícito (88%), que corresponden al 56% de los ilícitos totales (22/39). Por otro lado, si va a visitar a los dos deciles más riesgosos, se estaría cubriendo el 85% (31/39) de los ilícitos totales, sin embargo, de los 50 registros que se irá a visitar solo el 62% (31/50) serían ilícitos. Dado lo anterior, solo basta considerar el costo y la ganancia de ir a visitar n registros con x% de ilícito para determinar la estrategia de gestión optima.
