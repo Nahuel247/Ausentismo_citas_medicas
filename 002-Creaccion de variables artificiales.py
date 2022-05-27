@@ -46,13 +46,15 @@ def bivariante(variable,var_exp, var_resp, n_tramos):
     # Graficamos
     fig, ax1 = plt.subplots(figsize=(12, 6))
 
+    sns.set_context('poster', font_scale=0.6)
     sns.barplot(x=df_group['categorias'], y=df_group['n'], alpha=0.5, ax=ax1, color="blue")
     ax1.set( xlabel=variable, ylabel="Número de registros (N)")
 
     ax2 = ax1.twinx()
+    sns.set_context('poster', font_scale=0.6)
     sns.lineplot(x=df_group['categorias'], y=df_group['tasa_malo'], marker='o', sort=False, ax=ax2, color="red")
     ax2.set(ylim=(0, 1), ylabel="Tasa de ausentismo")
-#    ax2.set(ylabel="Tasa de ausentismo")
+    #ax2.set(ylabel="Tasa de ausentismo")
 
     fig.show()
 
@@ -78,12 +80,12 @@ data=data[(data.Dias_espera > 0) & (data.Edad > 0)]
 # VISUALIZAMOS ALGUNOS CASOS
 ##############################
 
-bivariante("Edad",data["Edad"],data["Ausentismo"],10)
-bivariante("Dias_espera",data["Dias_espera"],data["Ausentismo"],10)
+bivariante("Edad",data["Edad"],data["Ausentismo"],8)
+bivariante("Dias_espera",data["Dias_espera"],data["Ausentismo"],8)
 
 
 bivariante("Educación completa",data["Educacion_completa"].astype(str),data["Ausentismo"],10)
-#bivariante("Genero",data["Gender"].astype(str),data["Ausentismo"],10)
+bivariante("Genero",data["Gender"].astype(str),data["Ausentismo"],10)
 
 bivariante("Hipertensión",data["Hipertension"].astype(str),data["Ausentismo"],10)
 bivariante("Diabetes",data["Diabetes"].astype(str),data["Ausentismo"],10)
